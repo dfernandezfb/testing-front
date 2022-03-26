@@ -5,11 +5,12 @@
 --jet: #2e2f2f;
 --rich-black-fogra-29: #051014;
 }
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Noto+Sans&family=Press+Start+2P&display=swap');
 
 .logo-app{
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
   background: #051014;
   background: linear-gradient(to right, #cddddd 0%, #7353ba 50%, #cddddd 100%);
   -webkit-background-clip: text;
