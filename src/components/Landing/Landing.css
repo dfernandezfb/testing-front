@@ -1,11 +1,12 @@
 .landing-portada{
-  background-image: url('./../../assets/img/portada.jpg');
-  height: 80vh;
+  background-image: url('./../../assets/img/portada.avif');
+  background-position: center;
+  height: 100vh;
   background-size: cover;
 }
 .landing-portada-text{
   animation: color-change-2x 1s linear  alternate both;
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,43 @@
 .super-text-landing{
   font-size: 70px;
 }
+/* .landing-part-two{
+  background-image: url('./../../assets/img/Bitcoin-Factory-Crypto-Gif.gif');
+  height: 100vh;
+  background-size: cover;
+}
+.landing-cards{
+  width:100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  display: flex;
+  justify-content: space-around;
+}
+.landing-card{
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.front, .back{
+  background-image: url('./../../assets/img/background-card.gif');
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front{
+  z-index: 1;
+}
+.back{
+  transform: rotateY(180deg);
+}
+.hovercard:hover{
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+} */
 @keyframes color-change-2x {
   0% {
     background: transparent;

@@ -24,15 +24,7 @@
   z-index: 1;
   transition: .25s;
 }
-.navbar-button{
-  background-color: var(--ash-gray);
-  border-radius: .5rem;
-  padding: 5px 10px;
-}
-.navbar-button:hover{
-  background-color: var(--royal-purple);
-  transform: translateY(-10%);
-}
+
 
 @keyframes appear {
   0%{

@@ -16,6 +16,20 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.primary-button{
+  background-color: var(--royal-purple);
+  color: var(--gainsboro) !important;
+  border: none;
+  margin: 10px;
+}
+.primary-button:hover{
+  background-color: var(--ash-gray);
+  color: var(--rich-black-fogra-29) !important;
+  border: none;
+  margin: 10px;
+  transform: translateY(-10%);
+}
 body {
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
