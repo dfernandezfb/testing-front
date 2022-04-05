@@ -6,9 +6,9 @@ const PrivateRoute = ({children}) => {
   const {auth, getAuthUser} = useContext(UserContext)
 
   useEffect(()=>{
+    console.log(auth);
     getAuthUser();
   },[])
-
   return ( 
     auth? children : <Navigate to='/'/>
    );

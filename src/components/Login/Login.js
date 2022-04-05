@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Form, FloatingLabel, Button, Alert } from "react-bootstrap";
 import { BiUserPin } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { initialState } from "../../constants";
 import { UserContext } from "../../context/UserContext";
 import { validationLogin } from "../../helpers/validations";
@@ -8,7 +9,13 @@ import useForm from "../../hooks/useForm";
 import "./Login.css";
 
 const Login = () => {
-  const {login} = useContext(UserContext)
+  const {login, auth} = useContext(UserContext);
+  const navigate = useNavigate();
+  useEffect(()=>{
+    if(auth){
+      navigate('/home')
+    }
+  },[auth])
   const { values, errors, handleKeyUp, handleSubmit } = useForm(
     initialState,
     validationLogin,
@@ -44,8 +51,8 @@ const Login = () => {
             </FloatingLabel>
             <Button className="primary-button" type="submit"> Ingresar</Button>
             {Object.keys(errors).length > 0?
-            Object.values(errors).map(error=>{
-              return <Alert>{error}</Alert>
+            Object.values(errors).map((error,index)=>{
+              return <Alert key={index}>{error}</Alert>
             }):null}
           </form>
         </div>

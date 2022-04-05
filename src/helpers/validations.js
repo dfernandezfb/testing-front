@@ -41,7 +41,6 @@ export const validationRegister = values => {
 }
 
 export const validationLogin = values => {
-  console.log(values);
   let errors = {};
   if (!values.email) {
     errors.email = 'El email es obligatorio';

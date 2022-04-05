@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import axiosClient from "../config/axiosClient";
+import authToken from "../helpers/authToken";
 
 export const UserContext = createContext();
 
@@ -11,16 +12,27 @@ const UserProvider = ({children}) => {
     try {
       const {data} = await axiosClient.post('/users/login', values);
       setAuth(true)
-      setUser(data.user);
       localStorage.setItem('token',data.token);
     } catch (error) {
       console.log(error)
+      setAuth(false)
     }
   }
 
-  const getAuthUser = () =>
+  const getAuthUser = async () =>
   {
     const token = localStorage.getItem('token');
+    authToken(token);
+    try {
+      const {data} = await axiosClient.get('/users/auth');
+      setUser(data.user);
+      setAuth(true);
+      console.log('logueo joya');
+    } catch (error) {
+      console.log('logueo no joya');
+      console.log(error);
+      setAuth(false);
+    }
 
   }
   
@@ -30,7 +42,8 @@ const UserProvider = ({children}) => {
       user,
       setUser,
       auth,
-      login
+      login,
+      getAuthUser
     }}>
       {children}
     </UserContext.Provider>

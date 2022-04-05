@@ -1,3 +1,4 @@
+import imagen from './../../assets/img/portada.jpg'
 import './Landing.css'
 
 const Landing = () => {
@@ -9,6 +10,7 @@ const Landing = () => {
           <p className='text-animation-landing text-center'>Cotizaciones en tiempo real de todas las criptomonedas actuales</p>
         </div>
       </div>
+      
       {/* <div className="landing-part-two">
         <div className="landing-cards">
           <div className="landing-card hovercard">
