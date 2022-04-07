@@ -35,6 +35,12 @@ const UserProvider = ({children}) => {
     }
 
   }
+
+  const logout = ()=>{
+    setAuth(false);
+    setUser(null);
+    localStorage.removeItem('token');
+  }
   
 
   return ( 
@@ -43,7 +49,8 @@ const UserProvider = ({children}) => {
       setUser,
       auth,
       login,
-      getAuthUser
+      getAuthUser,
+      logout
     }}>
       {children}
     </UserContext.Provider>

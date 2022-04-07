@@ -10,7 +10,7 @@ const PrivateRoute = ({children}) => {
     getAuthUser();
   },[])
   return ( 
-    auth? children : <Navigate to='/'/>
+    auth? children : <Navigate to='/login'/>
    );
 }
  

@@ -1,9 +1,11 @@
 import InternHeader from "../components/InternHeader/InternHeader";
 
-const Home = () => {
+const FavsPage = () => {
   return ( 
-    <InternHeader/>
+    <>
+      <InternHeader/>
+    </>
    );
 }
  
-export default Home;
+export default FavsPage;
