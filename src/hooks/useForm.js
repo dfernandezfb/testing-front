@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (initialState, validate, submit) => {
+const useForm = (initialState, submit, validate) => {
   
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
@@ -9,6 +9,7 @@ const useForm = (initialState, validate, submit) => {
   useEffect(() => {
     if(submitting) {
       if(Object.keys(errors).length === 0) {
+        console.log(values);
         submit(values);
       }
       setSubmitting(false);
@@ -24,8 +25,12 @@ const useForm = (initialState, validate, submit) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const errorsValidate = validate(values);
-    setErrors(errorsValidate);
+    if(validate){
+      const errorsValidate = validate(values);
+      setErrors(errorsValidate);
+    }else{
+      setErrors({})
+    }
     setSubmitting(true)
   }
 
@@ -33,7 +38,8 @@ const useForm = (initialState, validate, submit) => {
     values,
     errors,
     handleKeyUp,
-    handleSubmit
+    handleSubmit,
+    setValues
   }
 
 }

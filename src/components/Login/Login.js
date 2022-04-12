@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { Form, FloatingLabel, Button, Alert } from "react-bootstrap";
 import { BiUserPin } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import { initialState } from "../../constants";
+import { LOGIN_VALUES } from "../../constants";
 import { UserContext } from "../../context/UserContext";
 import { validationLogin } from "../../helpers/validations";
 import useForm from "../../hooks/useForm";
@@ -17,9 +17,9 @@ const Login = () => {
     }
   },[auth])
   const { values, errors, handleKeyUp, handleSubmit } = useForm(
-    initialState,
-    validationLogin,
-    login
+    LOGIN_VALUES,
+    login,
+    validationLogin
   );
   return (
     <>
@@ -49,10 +49,12 @@ const Login = () => {
                 onKeyUp={handleKeyUp}
               />
             </FloatingLabel>
+            <div className="text-end my-3">
             <Button className="primary-button" type="submit"> Ingresar</Button>
+            </div>
             {Object.keys(errors).length > 0?
             Object.values(errors).map((error,index)=>{
-              return <Alert key={index}>{error}</Alert>
+              return <Alert key={index} variant='danger'>{error}</Alert>
             }):null}
           </form>
         </div>
